@@ -35,7 +35,13 @@ chmod +x install-system-requirements.sh && sudo ./install-system-requirements.sh
 composer install
 ```
 
-3. > Under development
+3. By now your application has the necessary dependencies, but still not operating. Run the following command to generate the app key.
+
+```bash
+php artisan key:generate
+```
+
+4. > Under development
 
 ## Licence
 
