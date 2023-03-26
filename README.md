@@ -15,12 +15,27 @@
 - [Virtual Card API](#virtual-card-api)
   - [Table of content](#table-of-content)
   - [Installation](#installation)
+    - [System requirements](#system-requirements)
   - [Licence](#licence)
   - [Author](#author)
 
 ## Installation
 
-> Under development
+### System requirements
+
+1. Firstly you need to install the system required packages. If you are running on a Unix system, you could run the following command to install the required packages. If you are running on a Windows system or another you could search about the dependencies separated and install each one.
+
+```bash
+chmod +x install-system-requirements.sh && sudo ./install-system-requirements.sh
+```
+
+2. After install the system required packages, you must run the following command to install the Laravel required packages.
+
+```bash
+composer install
+```
+
+3. > Under development
 
 ## Licence
 
