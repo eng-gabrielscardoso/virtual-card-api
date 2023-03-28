@@ -15,13 +15,14 @@
 - [Virtual Card API](#virtual-card-api)
   - [Table of content](#table-of-content)
   - [Installation](#installation)
-    - [System requirements](#system-requirements)
+    - [Local](#local)
+    - [Sail (Docker)](#sail-docker)
   - [Licence](#licence)
   - [Author](#author)
 
 ## Installation
 
-### System requirements
+### Local
 
 1. Firstly you need to install the system required packages. If you are running on a Unix system, you could run the following command to install the required packages. If you are running on a Windows system or another you could search about the dependencies separated and install each one.
 
@@ -35,13 +36,63 @@ chmod +x install-system-requirements.sh && sudo ./install-system-requirements.sh
 composer install
 ```
 
-3. By now your application has the necessary dependencies, but still not operating. Run the following command to generate the app key.
+3. By now your application has the necessary dependencies, but still not operating. Copy the `.env.example` file as `.env` and run the following command to generate the app key.
 
 ```bash
 php artisan key:generate
 ```
 
-4. > Under development
+4. Run the following command to run the migrations using artisan:
+
+```bash
+php artisan migrate
+```
+
+5. Run the following command to generate some fake data for testing purposes
+
+```bash
+php artisan db:seed
+```
+
+6. Finally, run the following command to serve the API
+
+```bash
+php artisan serve
+```
+
+### Sail (Docker)
+
+1. Copy the `.env.example` file as `.env`. You could run the API using Laravel Sail. For it, just setup the following alias into your local `.bashrc` file:
+
+```bash
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+```
+
+2. Now, run the following command to up the containers
+
+```bash
+sail up -d
+```
+
+3. By now your application has the necessary dependencies, but still not operating. Run the following command to generate the app key.
+
+```bash
+sail artisan key:generate
+```
+
+4. Run the following command to run the migrations using artisan:
+
+```bash
+sail artisan migrate
+```
+
+5. Run the following command to generate some fake data for testing purposes
+
+```bash
+sail artisan db:seed
+```
+
+And then, your API will be up and running.
 
 ## Licence
 
